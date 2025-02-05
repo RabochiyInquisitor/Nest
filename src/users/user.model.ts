@@ -2,20 +2,19 @@ import { Column, DataType, Model, Table } from "sequelize-typescript";
 
 interface IUserModal
 {
-    name : string
-    password : string
+    phoneNumber : string
+    Email : string
 }
 
-@Table({tableName: "users"})
+@Table({tableName: "users", timestamps: false})
 export class UserModel extends Model<UserModel, IUserModal>
 {
     @Column({type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true})
     id: number
-    @Column({type: DataType.INTEGER, unique: true, allowNull: false})
-    name : string
-    @Column({type: DataType.INTEGER, allowNull: false})
-    password : string
-    @Column({type: DataType.INTEGER})
-    rule : string | undefined
+    @Column({type: DataType.TEXT, unique: true, allowNull: false})
+    phoneNumber : string
+    @Column({type: DataType.TEXT, allowNull: false, unique: true})
+    Email : string
+    
 }
 

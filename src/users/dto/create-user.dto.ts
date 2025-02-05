@@ -1,5 +1,5 @@
 export class createUser
 {
-    readonly name : string
-    readonly password : string
+    readonly phoneNumber : string
+    readonly Email : string
 }
